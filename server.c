@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 	int tunfd, udpfd;
 	int ret;
 	ssize_t n;
-	size_t len;
+	socklen_t len;
 	int nfds;
 	char tun_name[IFNAMSIZ];
 	char buf[4096];
@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
 					printf("error packet\n");
 					for(i = 0; i < n; i++)
 						printf("%02x ", buf[i]);
-					printf("\n%d\n", n);
+					printf("\n%zd\n", n);
 					break;
 				}
 			}
