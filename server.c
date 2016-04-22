@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 	int tunfd, udpfd;
 	int ret;
 	ssize_t n;
-	socklen_t len;
+	socklen_t len = sizeof(struct sockaddr_in);
 	int nfds;
 	char tun_name[IFNAMSIZ];
 	char buf[4096];
